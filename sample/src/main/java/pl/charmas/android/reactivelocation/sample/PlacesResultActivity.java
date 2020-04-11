@@ -3,11 +3,9 @@ package pl.charmas.android.reactivelocation.sample;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.widget.TextView;
 
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.PlaceBuffer;
+import androidx.annotation.NonNull;
 
 import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
 import rx.functions.Action1;
@@ -58,20 +56,20 @@ public class PlacesResultActivity extends BaseActivity {
 
     @Override
     protected void onLocationPermissionGranted() {
-        compositeSubscription = new CompositeSubscription();
-        compositeSubscription.add(reactiveLocationProvider.getPlaceById(placeId)
-                .subscribe(new Action1<PlaceBuffer>() {
-                    @Override
-                    public void call(PlaceBuffer buffer) {
-                        Place place = buffer.get(0);
-                        if (place != null) {
-                            placeNameView.setText(place.getName());
-                            placeLocationView.setText(place.getLatLng().latitude + ", " + place.getLatLng().longitude);
-                            placeAddressView.setText(place.getAddress());
-                        }
-                        buffer.release();
-                    }
-                }));
+//        compositeSubscription = new CompositeSubscription();
+//        compositeSubscription.add(reactiveLocationProvider.getPlaceById(placeId)
+//                .subscribe(new Action1<PlaceBuffer>() {
+//                    @Override
+//                    public void call(PlaceBuffer buffer) {
+//                        Place place = buffer.get(0);
+//                        if (place != null) {
+//                            placeNameView.setText(place.getName());
+//                            placeLocationView.setText(place.getLatLng().latitude + ", " + place.getLatLng().longitude);
+//                            placeAddressView.setText(place.getAddress());
+//                        }
+//                        buffer.release();
+//                    }
+//                }));
     }
 
     @Override

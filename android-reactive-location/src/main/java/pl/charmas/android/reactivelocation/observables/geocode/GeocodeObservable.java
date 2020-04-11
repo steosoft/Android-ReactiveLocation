@@ -3,7 +3,8 @@ package pl.charmas.android.reactivelocation.observables.geocode;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import com.google.android.gms.maps.model.LatLngBounds;
 
